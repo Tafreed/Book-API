@@ -1,0 +1,84 @@
+2022-10-12 15:58:39.001 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-12 15:58:39.033 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-12 15:58:39.036 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-12 15:58:39.039 +05:30 [INF] Hosting environment: Development
+2022-10-12 15:58:39.040 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-12 15:58:39.177 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-12 15:58:39.357 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-12 15:58:39.357 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-12 15:58:39.357 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 182.5662ms
+2022-10-12 15:58:39.364 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 6.6540ms
+2022-10-12 15:58:39.400 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.7993ms
+2022-10-12 15:58:39.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-12 15:58:39.646 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 83.7365ms
+2022-10-12 15:59:04.130 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-12 15:59:04.340 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-12 15:59:04.365 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-12 15:59:04.367 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-12 15:59:04.368 +05:30 [INF] Hosting environment: Development
+2022-10-12 15:59:04.369 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-12 15:59:04.520 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-12 15:59:04.663 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 145.1091ms
+2022-10-12 15:59:04.672 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-12 15:59:04.672 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-12 15:59:04.679 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 6.8521ms
+2022-10-12 15:59:04.695 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.2002ms
+2022-10-12 15:59:04.847 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-12 15:59:04.912 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 65.3265ms
+2022-10-12 15:59:06.513 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-12 15:59:06.990 +05:30 [INF] Executed DbCommand (179ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [BookDB];
+2022-10-12 15:59:07.049 +05:30 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [BookDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2022-10-12 15:59:07.064 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-10-12 15:59:07.165 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2022-10-12 15:59:07.167 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-10-12 15:59:07.184 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-10-12 15:59:07.188 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-10-12 15:59:07.199 +05:30 [INF] Applying migration '20221012102832_Initial Migrate'.
+2022-10-12 15:59:07.220 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Books] (
+    [BookId] int NOT NULL IDENTITY,
+    [Title] nvarchar(50) NOT NULL,
+    [Author] nvarchar(30) NOT NULL,
+    [YearOfPublish] int NOT NULL,
+    CONSTRAINT [PK_Books] PRIMARY KEY ([BookId])
+);
+2022-10-12 15:59:07.236 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'BookId', N'Author', N'Title', N'YearOfPublish') AND [object_id] = OBJECT_ID(N'[Books]'))
+    SET IDENTITY_INSERT [Books] ON;
+INSERT INTO [Books] ([BookId], [Author], [Title], [YearOfPublish])
+VALUES (1, N'Daniel Dafoe', N'Robinson Crusoe', 1719);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'BookId', N'Author', N'Title', N'YearOfPublish') AND [object_id] = OBJECT_ID(N'[Books]'))
+    SET IDENTITY_INSERT [Books] OFF;
+2022-10-12 15:59:07.241 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'BookId', N'Author', N'Title', N'YearOfPublish') AND [object_id] = OBJECT_ID(N'[Books]'))
+    SET IDENTITY_INSERT [Books] ON;
+INSERT INTO [Books] ([BookId], [Author], [Title], [YearOfPublish])
+VALUES (2, N'Charles Dickens', N'A Tale of Two Cities', 1895);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'BookId', N'Author', N'Title', N'YearOfPublish') AND [object_id] = OBJECT_ID(N'[Books]'))
+    SET IDENTITY_INSERT [Books] OFF;
+2022-10-12 15:59:07.246 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'BookId', N'Author', N'Title', N'YearOfPublish') AND [object_id] = OBJECT_ID(N'[Books]'))
+    SET IDENTITY_INSERT [Books] ON;
+INSERT INTO [Books] ([BookId], [Author], [Title], [YearOfPublish])
+VALUES (3, N'H.G. Wells', N'The Invisible Man', 1897);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'BookId', N'Author', N'Title', N'YearOfPublish') AND [object_id] = OBJECT_ID(N'[Books]'))
+    SET IDENTITY_INSERT [Books] OFF;
+2022-10-12 15:59:07.247 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20221012102832_Initial Migrate', N'6.0.9');

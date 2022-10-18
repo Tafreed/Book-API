@@ -1,0 +1,15 @@
+2022-10-13 22:22:57.342 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:22:57.636 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-10-13 22:22:57.666 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-10-13 22:22:57.670 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-10-13 22:22:57.671 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-10-13 22:22:57.698 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-10-13 22:22:57.712 +05:30 [INF] No migrations were applied. The database is already up to date.
+2022-10-13 22:24:47.020 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None

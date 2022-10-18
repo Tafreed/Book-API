@@ -1,0 +1,761 @@
+2022-10-15 11:32:40.132 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 11:32:40.197 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 11:32:40.207 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 11:32:40.210 +05:30 [INF] Hosting environment: Development
+2022-10-15 11:32:40.212 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 11:32:41.072 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 11:32:41.649 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 583.3632ms
+2022-10-15 11:32:41.708 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 11:32:41.708 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 11:32:41.716 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 7.9744ms
+2022-10-15 11:32:41.819 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 111.4378ms
+2022-10-15 11:32:41.844 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?pageSize=2&pageNumber=2 - -
+2022-10-15 11:32:41.857 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 11:32:41.920 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 11:32:41.999 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 11:32:42.237 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 237.8231ms
+2022-10-15 11:32:43.900 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 11:32:47.155 +05:30 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 11:32:47.510 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2022-10-15 11:32:47.646 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 11:32:47.676 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 5739.6931ms
+2022-10-15 11:32:47.689 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 11:32:47.707 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?pageSize=2&pageNumber=2 - - - 200 - application/json;+charset=utf-8 5862.9790ms
+2022-10-15 11:33:24.927 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?pageSize=2&pageNumber=1 - -
+2022-10-15 11:33:24.935 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 11:33:24.942 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 11:33:24.954 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 11:33:24.965 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 11:33:24.984 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2022-10-15 11:33:24.996 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 11:33:25.004 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 54.0731ms
+2022-10-15 11:33:25.010 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 11:33:25.015 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?pageSize=2&pageNumber=1 - - - 200 - application/json;+charset=utf-8 87.9388ms
+2022-10-15 12:14:20.545 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 12:14:20.608 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 12:14:20.614 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 12:14:20.617 +05:30 [INF] Hosting environment: Development
+2022-10-15 12:14:20.619 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 12:14:20.815 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 12:14:21.029 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 217.2508ms
+2022-10-15 12:14:21.060 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 12:14:21.060 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 12:14:21.071 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 11.3144ms
+2022-10-15 12:14:21.089 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.9321ms
+2022-10-15 12:14:21.342 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 12:14:21.464 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 121.3638ms
+2022-10-15 12:14:58.244 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7078/auth/authenticate application/json 53
+2022-10-15 12:14:58.260 +05:30 [INF] CORS policy execution failed.
+2022-10-15 12:14:58.266 +05:30 [INF] Request origin https://localhost:7078 does not have permission to access the resource.
+2022-10-15 12:14:58.277 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:14:58.316 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:14:59.359 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:14:59.376 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 1043.6115ms
+2022-10-15 12:14:59.387 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:14:59.395 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7078/auth/authenticate application/json 53 - 200 - text/plain;+charset=utf-8 1150.9556ms
+2022-10-15 12:16:21.088 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate text/plain 56
+2022-10-15 12:16:21.095 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:16:21.102 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:16:21.119 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-10-15 12:16:21.128 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 20.034ms
+2022-10-15 12:16:21.131 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:16:21.135 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate text/plain 56 - 415 - application/problem+json;+charset=utf-8 46.1493ms
+2022-10-15 12:16:39.352 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:16:39.365 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:16:39.371 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:16:39.385 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:16:39.394 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 11.5785ms
+2022-10-15 12:16:39.400 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:16:39.403 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 51.0454ms
+2022-10-15 12:32:54.288 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 12:32:54.376 +05:30 [INF] Creating key {ed714536-7514-433f-96ee-0657ff6f971f} with creation date 2022-10-15 07:02:54Z, activation date 2022-10-15 07:02:54Z, and expiration date 2023-01-13 07:02:54Z.
+2022-10-15 12:32:54.431 +05:30 [INF] Writing data to file 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys\key-ed714536-7514-433f-96ee-0657ff6f971f.xml'.
+2022-10-15 12:32:54.707 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 12:32:54.711 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 12:32:54.722 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 12:32:54.726 +05:30 [INF] Hosting environment: Development
+2022-10-15 12:32:54.733 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 12:32:55.189 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 12:32:55.578 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 393.5727ms
+2022-10-15 12:32:55.624 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 12:32:55.634 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 10.1228ms
+2022-10-15 12:32:55.669 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 12:32:55.694 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 25.5830ms
+2022-10-15 12:32:56.006 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 12:32:56.220 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 213.8457ms
+2022-10-15 12:33:08.915 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-15 12:33:09.479 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-10-15 12:33:09.489 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2022-10-15 12:33:09.495 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 401 0 - 579.5194ms
+2022-10-15 12:34:39.548 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-15 12:34:40.021 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 12:34:40.089 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 12:34:41.509 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 12:34:43.954 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 12:34:44.068 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2022-10-15 12:34:44.137 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 12:34:44.148 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 4038.8331ms
+2022-10-15 12:34:44.151 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 12:34:44.155 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 4607.1896ms
+2022-10-15 12:36:16.615 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:36:16.626 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:36:16.645 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:36:16.708 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:36:16.713 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 51.9358ms
+2022-10-15 12:36:16.715 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:36:16.717 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 102.5907ms
+2022-10-15 12:36:57.350 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:36:57.354 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:36:57.357 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:36:57.364 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:36:57.369 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 6.2082ms
+2022-10-15 12:36:57.371 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:36:57.375 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 25.0290ms
+2022-10-15 12:37:20.158 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:37:20.167 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:37:20.174 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:37:20.192 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:37:20.197 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 6.3228ms
+2022-10-15 12:37:20.203 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:37:20.208 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 49.9855ms
+2022-10-15 12:37:44.952 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:37:44.960 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:37:44.965 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:37:44.993 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:37:45.003 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 11.5327ms
+2022-10-15 12:37:45.016 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:37:45.028 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 76.4120ms
+2022-10-15 12:37:58.134 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:37:58.141 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:37:58.144 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:37:58.149 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:37:58.151 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 2.3771ms
+2022-10-15 12:37:58.160 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:37:58.162 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 28.2064ms
+2022-10-15 12:38:19.387 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:38:19.393 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:38:19.399 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:38:19.408 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:38:19.411 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 3.4957ms
+2022-10-15 12:38:19.422 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:38:19.425 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 38.5400ms
+2022-10-15 12:38:29.431 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:38:29.438 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:38:29.444 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:38:29.460 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:38:29.470 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 11.1194ms
+2022-10-15 12:38:29.476 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:38:29.486 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 54.1967ms
+2022-10-15 12:38:41.863 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:38:41.871 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:38:41.878 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:38:41.904 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:38:41.912 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 9.9555ms
+2022-10-15 12:38:41.924 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:38:41.936 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 72.9585ms
+2022-10-15 12:38:54.714 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:38:54.723 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:38:54.729 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:38:54.743 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:38:54.753 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 11.5324ms
+2022-10-15 12:38:54.757 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:38:54.763 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 48.9360ms
+2022-10-15 12:39:04.499 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:39:04.506 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:39:04.512 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:39:04.524 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:39:04.536 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 12.6595ms
+2022-10-15 12:39:04.547 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:39:04.555 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 55.9693ms
+2022-10-15 12:42:51.789 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:42:51.796 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:42:51.803 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:42:51.818 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:42:51.827 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 9.4532ms
+2022-10-15 12:42:51.833 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:42:51.846 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 57.2539ms
+2022-10-15 12:45:04.531 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:45:04.543 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:45:04.558 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:45:04.575 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:45:04.585 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 10.8535ms
+2022-10-15 12:45:04.592 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:45:04.600 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 68.7697ms
+2022-10-15 12:45:39.395 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:45:39.404 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:45:39.413 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:45:39.424 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:45:39.426 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 2.5682ms
+2022-10-15 12:45:39.429 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:45:39.432 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 36.5248ms
+2022-10-15 12:45:51.436 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:45:51.444 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:45:51.453 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:45:51.475 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:45:51.489 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 15.3098ms
+2022-10-15 12:45:51.503 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:45:51.509 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 73.0287ms
+2022-10-15 12:46:06.844 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:46:06.854 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:46:06.865 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:46:06.881 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:46:06.891 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 11.4705ms
+2022-10-15 12:46:06.896 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:46:06.899 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 55.0970ms
+2022-10-15 12:46:26.465 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:46:26.474 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:46:26.480 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:46:26.501 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:46:26.512 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 12.2242ms
+2022-10-15 12:46:26.522 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:46:26.534 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 68.5508ms
+2022-10-15 12:47:22.731 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 12:47:22.743 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:47:22.754 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 12:47:22.765 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 12:47:22.769 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 4.9746ms
+2022-10-15 12:47:22.780 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 12:47:22.785 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 53.6598ms
+2022-10-15 12:47:26.595 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-15 12:47:26.602 +05:30 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-10-15 12:47:26.609 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-10-15 12:47:26.621 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2022-10-15 12:47:26.627 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 401 0 - 31.9409ms
+2022-10-15 13:01:55.139 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56
+2022-10-15 13:01:55.145 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 13:01:55.155 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 13:01:55.169 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 13:01:55.174 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 5.6043ms
+2022-10-15 13:01:55.178 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 13:01:55.181 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 42.5619ms
+2022-10-15 13:02:00.912 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-15 13:02:00.922 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:02:00.929 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:02:00.952 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:02:02.983 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 13:02:03.002 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2022-10-15 13:02:03.016 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:02:03.022 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 2075.8929ms
+2022-10-15 13:02:03.025 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:02:03.029 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 2116.5035ms
+2022-10-15 13:02:40.063 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/1 - -
+2022-10-15 13:02:40.072 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-15 13:02:40.097 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:02:40.233 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:02:40.284 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-15 13:02:40.301 +05:30 [INF] Executing OkObjectResult, writing value of type 'Book_API.Entities.Book'.
+2022-10-15 13:02:40.312 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 196.9758ms
+2022-10-15 13:02:40.323 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-15 13:02:40.330 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/1 - - - 200 - application/json;+charset=utf-8 266.6708ms
+2022-10-15 13:03:51.926 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?name=The - -
+2022-10-15 13:03:51.934 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:03:51.944 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:03:51.966 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:03:51.984 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__name_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+WHERE [b].[Title] = @__name_0
+2022-10-15 13:03:52.009 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__name_0='?' (Size = 50), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[Title] = @__name_0
+ORDER BY [b].[BookId]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2022-10-15 13:03:52.021 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:03:52.030 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 74.9348ms
+2022-10-15 13:03:52.034 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:03:52.038 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?name=The - - - 200 - application/json;+charset=utf-8 111.9810ms
+2022-10-15 13:03:58.361 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?name=the - -
+2022-10-15 13:03:58.371 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:03:58.380 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:03:58.409 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:03:58.428 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__name_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+WHERE [b].[Title] = @__name_0
+2022-10-15 13:03:58.442 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 50), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[Title] = @__name_0
+ORDER BY [b].[BookId]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2022-10-15 13:03:58.448 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:03:58.456 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 51.5937ms
+2022-10-15 13:03:58.461 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:03:58.468 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?name=the - - - 200 - application/json;+charset=utf-8 106.2518ms
+2022-10-15 13:04:07.351 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?name=Crusoe - -
+2022-10-15 13:04:07.359 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:04:07.363 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:04:07.385 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:04:07.400 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+WHERE [b].[Title] = @__name_0
+2022-10-15 13:04:07.428 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 50), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[Title] = @__name_0
+ORDER BY [b].[BookId]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2022-10-15 13:04:07.438 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:04:07.447 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 63.3658ms
+2022-10-15 13:04:07.453 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:04:07.458 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?name=Crusoe - - - 200 - application/json;+charset=utf-8 107.4251ms
+2022-10-15 13:05:25.605 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-15 13:05:25.614 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:05:25.627 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:05:25.647 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:05:25.668 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 13:05:25.676 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2022-10-15 13:05:25.689 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:05:25.692 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 47.2332ms
+2022-10-15 13:05:25.694 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:05:25.696 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 91.1474ms
+2022-10-15 13:05:38.344 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?name=Robinson%20Crusoe - -
+2022-10-15 13:05:38.352 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:05:38.357 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:05:38.373 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:05:38.385 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__name_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+WHERE [b].[Title] = @__name_0
+2022-10-15 13:05:38.394 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 50), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[Title] = @__name_0
+ORDER BY [b].[BookId]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2022-10-15 13:05:38.402 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:05:38.405 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 33.3917ms
+2022-10-15 13:05:38.407 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:05:38.409 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?name=Robinson%20Crusoe - - - 200 - application/json;+charset=utf-8 64.9127ms
+2022-10-15 13:06:43.381 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?searchQuery=the - -
+2022-10-15 13:06:43.392 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:06:43.398 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:06:43.406 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:06:43.481 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__searchQuery_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+WHERE (((@__searchQuery_0 LIKE N'') OR (CHARINDEX(@__searchQuery_0, [b].[Title]) > 0)) OR ((@__searchQuery_0 LIKE N'') OR (CHARINDEX(@__searchQuery_0, [b].[Author]) > 0))) OR (CONVERT(varchar(11), [b].[YearOfPublish]) = @__searchQuery_0)
+2022-10-15 13:06:43.497 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__searchQuery_0='?' (Size = 50), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE (((@__searchQuery_0 LIKE N'') OR (CHARINDEX(@__searchQuery_0, [b].[Title]) > 0)) OR ((@__searchQuery_0 LIKE N'') OR (CHARINDEX(@__searchQuery_0, [b].[Author]) > 0))) OR (CONVERT(varchar(11), [b].[YearOfPublish]) = @__searchQuery_0)
+ORDER BY [b].[BookId]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2022-10-15 13:06:43.513 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:06:43.525 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 119.999ms
+2022-10-15 13:06:43.529 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:06:43.538 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?searchQuery=the - - - 200 - application/json;+charset=utf-8 156.7804ms
+2022-10-15 13:07:11.061 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?searchQuery=1897 - -
+2022-10-15 13:07:11.071 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:07:11.078 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:07:11.099 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:07:11.116 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__searchQuery_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+WHERE (((@__searchQuery_0 LIKE N'') OR (CHARINDEX(@__searchQuery_0, [b].[Title]) > 0)) OR ((@__searchQuery_0 LIKE N'') OR (CHARINDEX(@__searchQuery_0, [b].[Author]) > 0))) OR (CONVERT(varchar(11), [b].[YearOfPublish]) = @__searchQuery_0)
+2022-10-15 13:07:11.127 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__searchQuery_0='?' (Size = 50), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE (((@__searchQuery_0 LIKE N'') OR (CHARINDEX(@__searchQuery_0, [b].[Title]) > 0)) OR ((@__searchQuery_0 LIKE N'') OR (CHARINDEX(@__searchQuery_0, [b].[Author]) > 0))) OR (CONVERT(varchar(11), [b].[YearOfPublish]) = @__searchQuery_0)
+ORDER BY [b].[BookId]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2022-10-15 13:07:11.136 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:07:11.140 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 44.4591ms
+2022-10-15 13:07:11.142 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:07:11.145 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?searchQuery=1897 - - - 200 - application/json;+charset=utf-8 83.9842ms
+2022-10-15 13:07:51.053 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?name=The%20Invisible%20Man&searchQuery=1897 - -
+2022-10-15 13:07:51.062 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-10-15 13:07:51.069 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2022-10-15 13:07:51.080 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?name=The%20Invisible%20Man&searchQuery=1897 - - - 401 0 - 26.5774ms
+2022-10-15 13:07:58.356 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?name=The%20Invisible%20Man&searchQuery=1897 - -
+2022-10-15 13:07:58.366 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:07:58.373 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:07:58.396 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:07:58.424 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__name_0='?' (Size = 50), @__searchQuery_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+WHERE ([b].[Title] = @__name_0) AND ((((@__searchQuery_1 LIKE N'') OR (CHARINDEX(@__searchQuery_1, [b].[Title]) > 0)) OR ((@__searchQuery_1 LIKE N'') OR (CHARINDEX(@__searchQuery_1, [b].[Author]) > 0))) OR (CONVERT(varchar(11), [b].[YearOfPublish]) = @__searchQuery_1))
+2022-10-15 13:07:58.449 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__name_0='?' (Size = 50), @__searchQuery_1='?' (Size = 50), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE ([b].[Title] = @__name_0) AND ((((@__searchQuery_1 LIKE N'') OR (CHARINDEX(@__searchQuery_1, [b].[Title]) > 0)) OR ((@__searchQuery_1 LIKE N'') OR (CHARINDEX(@__searchQuery_1, [b].[Author]) > 0))) OR (CONVERT(varchar(11), [b].[YearOfPublish]) = @__searchQuery_1))
+ORDER BY [b].[BookId]
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2022-10-15 13:07:58.465 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:07:58.470 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 77.5776ms
+2022-10-15 13:07:58.473 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:07:58.482 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?name=The%20Invisible%20Man&searchQuery=1897 - - - 200 - application/json;+charset=utf-8 125.7247ms
+2022-10-15 13:08:08.795 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?pageSize=2&pageNumber=1 - -
+2022-10-15 13:08:08.804 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-10-15 13:08:08.814 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2022-10-15 13:08:08.822 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?pageSize=2&pageNumber=1 - - - 401 0 - 26.5082ms
+2022-10-15 13:08:13.996 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books?pageSize=2&pageNumber=1 - -
+2022-10-15 13:08:14.005 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:08:14.011 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:08:14.037 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:08:14.055 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 13:08:14.072 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2022-10-15 13:08:14.085 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:08:14.092 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 56.985ms
+2022-10-15 13:08:14.102 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:08:14.107 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books?pageSize=2&pageNumber=1 - - - 200 - application/json;+charset=utf-8 111.0244ms
+2022-10-15 13:24:37.538 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 13:24:37.896 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 13:24:37.901 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 13:24:37.910 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 13:24:37.912 +05:30 [INF] Hosting environment: Development
+2022-10-15 13:24:37.913 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 13:24:38.212 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 13:24:38.675 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 466.7286ms
+2022-10-15 13:24:38.728 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 13:24:38.738 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 9.7774ms
+2022-10-15 13:24:38.779 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 13:24:38.812 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.1555ms
+2022-10-15 13:24:39.108 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 13:24:39.307 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 198.5561ms
+2022-10-15 13:24:51.260 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 13:24:51.288 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 28.2671ms
+2022-10-15 13:24:51.332 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 13:24:51.332 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 13:24:51.342 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 9.9820ms
+2022-10-15 13:24:51.414 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 81.8463ms
+2022-10-15 13:24:51.744 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 13:24:51.780 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 35.4083ms
+2022-10-15 13:29:02.951 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 13:29:03.386 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 13:29:03.392 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 13:29:03.402 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 13:29:03.406 +05:30 [INF] Hosting environment: Development
+2022-10-15 13:29:03.413 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 13:29:03.970 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 13:29:04.465 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 13:29:04.465 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 13:29:04.465 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 500.9954ms
+2022-10-15 13:29:04.473 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 8.7478ms
+2022-10-15 13:29:04.498 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.8251ms
+2022-10-15 13:29:04.959 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 13:29:05.137 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 178.8374ms
+2022-10-15 13:29:55.929 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/api/books?pageNumber=1&pageSize=10 - -
+2022-10-15 13:29:56.040 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:29:56.099 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:29:57.518 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:30:00.667 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 13:30:00.873 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2022-10-15 13:30:00.996 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:30:01.024 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 4906.9052ms
+2022-10-15 13:30:01.032 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:30:01.048 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/api/books?pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 5118.9065ms
+2022-10-15 13:31:41.966 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 13:31:42.475 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 13:31:42.483 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 13:31:42.500 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 13:31:42.505 +05:30 [INF] Hosting environment: Development
+2022-10-15 13:31:42.511 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 13:33:11.500 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 13:33:11.722 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 13:33:11.726 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 13:33:11.732 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 13:33:11.734 +05:30 [INF] Hosting environment: Development
+2022-10-15 13:33:11.736 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 13:33:12.599 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 13:33:13.037 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 444.2803ms
+2022-10-15 13:33:13.106 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 13:33:13.108 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 13:33:13.123 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 14.8700ms
+2022-10-15 13:33:13.157 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.0503ms
+2022-10-15 13:33:13.569 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 13:33:13.797 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 227.5096ms
+2022-10-15 13:33:39.907 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7078/auth/v2/authenticate application/json 50
+2022-10-15 13:33:39.988 +05:30 [INF] CORS policy execution failed.
+2022-10-15 13:33:39.993 +05:30 [INF] Request origin https://localhost:7078 does not have permission to access the resource.
+2022-10-15 13:33:40.004 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 13:33:40.051 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 13:33:40.358 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 13:33:40.386 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 307.7582ms
+2022-10-15 13:33:40.400 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 13:33:40.404 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7078/auth/v2/authenticate application/json 50 - 200 - application/json;+charset=utf-8 497.1226ms
+2022-10-15 13:34:00.517 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/v2/authenticate application/json 56
+2022-10-15 13:34:00.524 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 13:34:00.530 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 13:34:00.542 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 13:34:00.547 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 7.0401ms
+2022-10-15 13:34:00.549 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 13:34:00.553 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/v2/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 36.4872ms
+2022-10-15 13:34:07.015 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-15 13:34:07.138 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:34:07.160 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 13:34:08.686 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 13:34:09.832 +05:30 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 13:34:10.058 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2022-10-15 13:34:10.195 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 13:34:10.205 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 3036.2874ms
+2022-10-15 13:34:10.213 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 13:34:10.228 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 3212.4653ms
+2022-10-15 13:55:21.063 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 13:55:21.189 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 13:55:21.191 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 13:55:21.194 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 13:55:21.195 +05:30 [INF] Hosting environment: Development
+2022-10-15 13:55:21.196 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 13:55:21.299 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 13:55:21.447 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 149.9317ms
+2022-10-15 13:55:21.467 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 13:55:21.467 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 13:55:21.470 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 2.8536ms
+2022-10-15 13:55:21.481 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.2880ms
+2022-10-15 13:55:21.688 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 13:55:21.778 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 90.2192ms
+2022-10-15 13:55:23.869 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 13:55:23.875 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 6.2515ms
+2022-10-15 13:55:23.888 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 13:55:23.888 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 13:55:23.890 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 2.0542ms
+2022-10-15 13:55:23.899 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 11.4776ms
+2022-10-15 13:55:23.985 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 13:55:23.996 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 11.4681ms
+2022-10-15 13:57:53.220 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 13:57:53.333 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 13:57:53.335 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 13:57:53.338 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 13:57:53.338 +05:30 [INF] Hosting environment: Development
+2022-10-15 13:57:53.339 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 13:57:53.960 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 13:57:54.100 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 141.4098ms
+2022-10-15 13:57:54.121 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 13:57:54.121 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 13:57:54.128 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 7.2908ms
+2022-10-15 13:57:54.144 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.6379ms
+2022-10-15 13:57:54.210 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 13:57:54.305 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 95.0493ms
+2022-10-15 13:58:28.546 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 13:58:28.669 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 13:58:28.672 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 13:58:28.674 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 13:58:28.674 +05:30 [INF] Hosting environment: Development
+2022-10-15 13:58:28.675 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 13:58:29.335 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 13:58:29.468 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 135.4618ms
+2022-10-15 13:58:29.482 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 13:58:29.482 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 13:58:29.485 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.3525ms
+2022-10-15 13:58:29.492 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.9588ms
+2022-10-15 13:58:29.585 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 13:58:29.656 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.1049ms
+2022-10-15 13:58:37.316 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 13:58:37.326 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 10.3308ms
+2022-10-15 13:58:37.339 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 13:58:37.339 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 13:58:37.342 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.3523ms
+2022-10-15 13:58:37.346 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.8902ms
+2022-10-15 13:58:37.413 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 13:58:37.422 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 8.4818ms
+2022-10-15 14:03:19.629 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 14:03:19.746 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 14:03:19.749 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 14:03:19.751 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 14:03:19.752 +05:30 [INF] Hosting environment: Development
+2022-10-15 14:03:19.752 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 14:03:20.258 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 14:03:20.387 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 130.9120ms
+2022-10-15 14:03:20.400 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 14:03:20.400 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 14:03:20.407 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 6.1479ms
+2022-10-15 14:03:20.418 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.3212ms
+2022-10-15 14:03:20.510 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 14:03:20.592 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 82.5182ms
+2022-10-15 14:05:08.799 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 14:05:08.904 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 14:05:08.906 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 14:05:08.908 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 14:05:08.908 +05:30 [INF] Hosting environment: Development
+2022-10-15 14:05:08.909 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 14:05:09.402 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 14:05:09.543 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 144.1052ms
+2022-10-15 14:05:09.561 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 14:05:09.561 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 14:05:09.568 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 6.1214ms
+2022-10-15 14:05:09.581 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.6601ms
+2022-10-15 14:05:09.670 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 14:05:09.759 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 89.3734ms
+2022-10-15 14:11:38.758 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 14:11:38.899 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 14:11:38.903 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 14:11:38.906 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 14:11:38.907 +05:30 [INF] Hosting environment: Development
+2022-10-15 14:11:38.908 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 14:11:39.362 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 14:11:39.503 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 142.2039ms
+2022-10-15 14:11:39.520 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 14:11:39.520 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 14:11:39.526 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.8688ms
+2022-10-15 14:11:39.538 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.3759ms
+2022-10-15 14:11:39.661 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 14:11:39.770 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 108.3952ms
+2022-10-15 14:18:00.925 +05:30 [INF] User profile is available. Using 'C:\Users\SNuman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-15 14:18:01.045 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-15 14:18:01.049 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-15 14:18:01.053 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-15 14:18:01.053 +05:30 [INF] Hosting environment: Development
+2022-10-15 14:18:01.055 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-15 14:18:01.542 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 14:18:01.680 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 140.3758ms
+2022-10-15 14:18:01.696 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 14:18:01.696 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 14:18:01.704 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 8.2110ms
+2022-10-15 14:18:01.716 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.4743ms
+2022-10-15 14:18:01.777 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 14:18:01.860 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 83.0666ms
+2022-10-15 14:19:14.872 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7078/auth/v1/authenticate application/json 53
+2022-10-15 14:19:14.893 +05:30 [INF] Multiple candidate actions were found, but none matched the requested service API version '1'. Candidate actions: Book_API.Controllers.AuthController.Authenticate (Book API)
+2022-10-15 14:19:14.928 +05:30 [INF] CORS policy execution failed.
+2022-10-15 14:19:14.932 +05:30 [INF] Request origin https://localhost:7078 does not have permission to access the resource.
+2022-10-15 14:19:14.935 +05:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Http.Endpoint'
+2022-10-15 14:19:14.942 +05:30 [WRN] An error occurred while trying to create a DataContractSerializer for the type '<>f__AnonymousType0`1[[<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Microsoft.AspNetCore.Mvc.Versioning, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]], Microsoft.AspNetCore.Mvc.Versioning, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+System.Runtime.Serialization.InvalidDataContractException: Type '<>f__AnonymousType0`1[<>f__AnonymousType1`3[System.String,System.String,<>f__AnonymousType2`1[System.String]]]' cannot be serialized. Consider marking it with the DataContractAttribute attribute, and marking all of its members you want serialized with the DataMemberAttribute attribute. Alternatively, you can ensure that the type is public and has a parameterless constructor - all public members of the type will then be serialized, and no attributes will be required.
+   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String message, Type type)
+   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type type)
+   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32 id, RuntimeTypeHandle typeHandle, Type type)
+   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32 id, RuntimeTypeHandle typeHandle, Type type)
+   at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle typeHandle, Type type, SerializationMode mode)
+   at System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter.CreateSerializer(Type type)
+2022-10-15 14:19:14.975 +05:30 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2022-10-15 14:19:14.979 +05:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Http.Endpoint'
+2022-10-15 14:19:14.983 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7078/auth/v1/authenticate application/json 53 - 406 0 - 110.9337ms
+2022-10-15 14:19:24.428 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7078/auth/v1/authenticate application/json 53
+2022-10-15 14:19:24.432 +05:30 [INF] Multiple candidate actions were found, but none matched the requested service API version '1'. Candidate actions: Book_API.Controllers.AuthController.Authenticate (Book API)
+2022-10-15 14:19:24.434 +05:30 [INF] CORS policy execution failed.
+2022-10-15 14:19:24.436 +05:30 [INF] Request origin https://localhost:7078 does not have permission to access the resource.
+2022-10-15 14:19:24.438 +05:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Http.Endpoint'
+2022-10-15 14:19:24.441 +05:30 [WRN] An error occurred while trying to create a DataContractSerializer for the type '<>f__AnonymousType0`1[[<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Microsoft.AspNetCore.Mvc.Versioning, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]], Microsoft.AspNetCore.Mvc.Versioning, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+System.Runtime.Serialization.InvalidDataContractException: Type '<>f__AnonymousType0`1[<>f__AnonymousType1`3[System.String,System.String,<>f__AnonymousType2`1[System.String]]]' cannot be serialized. Consider marking it with the DataContractAttribute attribute, and marking all of its members you want serialized with the DataMemberAttribute attribute. Alternatively, you can ensure that the type is public and has a parameterless constructor - all public members of the type will then be serialized, and no attributes will be required.
+   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String message, Type type)
+   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type type)
+   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32 id, RuntimeTypeHandle typeHandle, Type type)
+   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32 id, RuntimeTypeHandle typeHandle, Type type)
+   at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle typeHandle, Type type, SerializationMode mode)
+   at System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter.CreateSerializer(Type type)
+2022-10-15 14:19:24.445 +05:30 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2022-10-15 14:19:24.446 +05:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Http.Endpoint'
+2022-10-15 14:19:24.449 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7078/auth/v1/authenticate application/json 53 - 406 0 - 20.3824ms
+2022-10-15 14:19:31.539 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-15 14:19:31.554 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 14.5977ms
+2022-10-15 14:19:31.577 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-15 14:19:31.583 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.9567ms
+2022-10-15 14:19:31.591 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-15 14:19:31.601 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.8437ms
+2022-10-15 14:19:31.692 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-15 14:19:31.704 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.0698ms
+2022-10-15 14:19:44.048 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/auth/v2/authenticate application/json 56
+2022-10-15 14:19:44.053 +05:30 [INF] Executing endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 14:19:44.070 +05:30 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Authenticate(Book_API.Controllers.AuthenticationRequestBody) on controller Book_API.Controllers.AuthController (Book API).
+2022-10-15 14:19:44.182 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2022-10-15 14:19:44.190 +05:30 [INF] Executed action Book_API.Controllers.AuthController.Authenticate (Book API) in 112.782ms
+2022-10-15 14:19:44.193 +05:30 [INF] Executed endpoint 'Book_API.Controllers.AuthController.Authenticate (Book API)'
+2022-10-15 14:19:44.194 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/auth/v2/authenticate application/json 56 - 200 - text/plain;+charset=utf-8 146.2720ms
+2022-10-15 14:19:47.918 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-15 14:19:47.978 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 14:19:47.994 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 14:19:48.698 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 14:19:50.307 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 14:19:50.409 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2022-10-15 14:19:50.462 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 14:19:50.469 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 2468.0962ms
+2022-10-15 14:19:50.472 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 14:19:50.477 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 2558.9883ms
+2022-10-15 14:20:34.625 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 103
+2022-10-15 14:20:34.630 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-15 14:20:34.633 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 14:20:34.642 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 14:20:34.752 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 30), @p1='?' (Size = 50), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Books] ([Author], [Title], [YearOfPublish])
+VALUES (@p0, @p1, @p2);
+SELECT [BookId]
+FROM [Books]
+WHERE @@ROWCOUNT = 1 AND [BookId] = scope_identity();
+2022-10-15 14:20:34.796 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2022-10-15 14:20:34.799 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 164.0392ms
+2022-10-15 14:20:34.800 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-15 14:20:34.801 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 103 - 200 - application/json;+charset=utf-8 175.6589ms
+2022-10-15 14:20:41.879 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-15 14:20:41.884 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 14:20:41.886 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks(System.String, System.String, Int32, Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-15 14:20:41.932 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-15 14:20:41.938 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2022-10-15 14:20:41.942 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+ORDER BY [b].[BookId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2022-10-15 14:20:41.946 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-15 14:20:41.947 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 59.074ms
+2022-10-15 14:20:41.948 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-15 14:20:41.949 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 69.7527ms
+2022-10-15 14:21:28.787 +05:30 [INF] Application is shutting down...

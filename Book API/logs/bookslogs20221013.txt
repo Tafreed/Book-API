@@ -1,0 +1,1677 @@
+2022-10-13 20:58:01.960 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 20:58:02.046 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 20:58:02.050 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 20:58:02.052 +05:30 [INF] Hosting environment: Development
+2022-10-13 20:58:02.053 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 20:58:03.294 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 20:58:03.585 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 20:58:03.588 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 297.6576ms
+2022-10-13 20:58:03.591 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.7206ms
+2022-10-13 20:58:03.616 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 20:58:03.666 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 50.1849ms
+2022-10-13 20:58:03.749 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 20:58:03.836 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 87.4395ms
+2022-10-13 20:58:16.212 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 20:58:16.217 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 20:58:16.228 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Entities.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 20:58:16.723 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 20:58:18.327 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 20:58:18.378 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 2145.5483ms
+2022-10-13 20:58:18.380 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 20:58:18.383 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IEnumerable`1
+System.Collections.Generic.List`1[[Book_API.Entities.Book, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IEnumerable`1[[Book_API.Entities.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Book -> BookDto
+Book_API.Entities.Book -> Book_API.Entities.BookDto
+   at lambda_method46(Closure , Book , BookDto , ResolutionContext )
+   at lambda_method45(Closure , Object , IEnumerable`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method45(Closure , Object , IEnumerable`1 , ResolutionContext )
+   at Book_API.Controllers.BookApiController.GetBooks() in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 31
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 20:58:18.430 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 500 - text/plain;+charset=utf-8 2218.3623ms
+2022-10-13 21:00:48.029 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:00:48.068 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:00:48.074 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:00:48.075 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:00:48.076 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:00:48.412 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:00:48.561 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 150.5469ms
+2022-10-13 21:00:48.566 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:00:48.566 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:00:48.571 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.3961ms
+2022-10-13 21:00:48.586 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.5756ms
+2022-10-13 21:00:48.686 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:00:48.824 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 138.6262ms
+2022-10-13 21:00:51.651 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 21:00:51.657 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:00:51.668 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:00:52.123 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:00:52.455 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 21:00:52.506 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 21:00:52.513 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 840.1602ms
+2022-10-13 21:00:52.515 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:00:52.521 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 869.7852ms
+2022-10-13 21:00:58.382 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/2 - -
+2022-10-13 21:00:58.386 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 21:00:58.407 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:00:58.420 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:00:58.498 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 21:00:58.504 +05:30 [INF] Executing OkObjectResult, writing value of type 'Book_API.Entities.Book'.
+2022-10-13 21:00:58.506 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 96.6925ms
+2022-10-13 21:00:58.508 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 21:00:58.509 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/2 - - - 200 - application/json;+charset=utf-8 127.1246ms
+2022-10-13 21:01:04.952 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:01:04.956 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:01:04.962 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:01:05.035 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:01:05.041 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 74.1754ms
+2022-10-13 21:01:05.042 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:01:05.045 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'BookForCreationDto' was not found. Ensure that the entity type has been added to the model.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetOrCreateEntry(Object entity)
+   at Microsoft.EntityFrameworkCore.DbContext.EntryWithoutDetectChanges[TEntity](TEntity entity)
+   at Microsoft.EntityFrameworkCore.DbContext.AddAsync[TEntity](TEntity entity, CancellationToken cancellationToken)
+   at Book_API.Services.BookInfoRepository.AddBookAsync(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Services\BookInfoRepository.cs:line 29
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method59(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:01:05.089 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 137.4109ms
+2022-10-13 21:04:20.188 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:04:20.222 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:04:20.227 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:04:20.229 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:04:20.230 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:04:20.637 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:04:20.806 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 170.2694ms
+2022-10-13 21:04:20.809 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:04:20.809 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:04:20.817 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 8.6283ms
+2022-10-13 21:04:20.839 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 29.8939ms
+2022-10-13 21:04:20.994 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:04:21.078 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 83.6941ms
+2022-10-13 21:04:23.043 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:04:23.048 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:04:23.065 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:04:23.238 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 166.4765ms
+2022-10-13 21:04:23.242 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:04:23.246 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:04:23.294 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 250.6618ms
+2022-10-13 21:06:05.208 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:06:05.240 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:06:05.244 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:06:05.245 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:06:05.246 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:06:05.740 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:06:05.862 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 123.5364ms
+2022-10-13 21:06:05.868 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:06:05.868 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:06:05.873 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.6415ms
+2022-10-13 21:06:05.885 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.2295ms
+2022-10-13 21:06:05.985 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:06:06.055 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 69.3758ms
+2022-10-13 21:06:07.869 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:06:07.875 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:06:07.894 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:06:08.046 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 147.3725ms
+2022-10-13 21:06:08.049 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:06:08.052 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:06:08.085 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 216.1533ms
+2022-10-13 21:08:33.814 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:08:33.845 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:08:33.850 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:08:33.851 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:08:33.852 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:08:33.878 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:08:34.008 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 131.7426ms
+2022-10-13 21:08:34.010 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:08:34.010 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:08:34.012 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 1.9664ms
+2022-10-13 21:08:34.022 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 11.3966ms
+2022-10-13 21:08:34.164 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:08:34.221 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 56.9480ms
+2022-10-13 21:08:36.496 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:08:36.500 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:08:36.517 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:08:36.668 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 146.7793ms
+2022-10-13 21:08:36.671 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:08:36.673 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:08:36.704 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 208.5907ms
+2022-10-13 21:12:29.655 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:12:29.681 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:12:29.684 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:12:29.684 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:12:29.685 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:12:29.780 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:12:29.909 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 131.0236ms
+2022-10-13 21:12:29.911 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:12:29.911 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:12:29.914 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.1707ms
+2022-10-13 21:12:29.924 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.7649ms
+2022-10-13 21:12:30.069 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:12:30.131 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 62.1657ms
+2022-10-13 21:12:32.191 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:12:32.195 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:12:32.211 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:12:32.358 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 144.0656ms
+2022-10-13 21:12:32.361 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:12:32.363 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:12:32.392 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 200.7877ms
+2022-10-13 21:14:53.945 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:14:53.975 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:14:53.978 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:14:53.979 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:14:53.980 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:14:54.078 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:14:54.200 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 123.9447ms
+2022-10-13 21:14:54.205 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:14:54.205 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:14:54.209 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.0858ms
+2022-10-13 21:14:54.220 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.8900ms
+2022-10-13 21:14:54.323 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:14:54.379 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 55.8643ms
+2022-10-13 21:14:56.869 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:14:56.874 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:14:56.905 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:14:57.424 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:14:57.431 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 520.8214ms
+2022-10-13 21:14:57.434 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:14:57.436 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'BookForCreationDto' was not found. Ensure that the entity type has been added to the model.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetOrCreateEntry(Object entity)
+   at Microsoft.EntityFrameworkCore.DbContext.EntryWithoutDetectChanges[TEntity](TEntity entity)
+   at Microsoft.EntityFrameworkCore.DbContext.AddAsync[TEntity](TEntity entity, CancellationToken cancellationToken)
+   at Book_API.Services.BookInfoRepository.AddBookAsync(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Services\BookInfoRepository.cs:line 29
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 52
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:14:57.468 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 598.4436ms
+2022-10-13 21:16:50.491 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:16:50.520 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:16:50.524 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:16:50.525 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:16:50.525 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:16:50.551 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:16:50.687 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 137.5821ms
+2022-10-13 21:16:50.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:16:50.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:16:50.698 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.0089ms
+2022-10-13 21:16:50.709 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.1925ms
+2022-10-13 21:16:50.832 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:16:50.898 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 65.5667ms
+2022-10-13 21:16:53.413 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:16:53.417 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:16:53.432 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:16:53.576 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 138.9079ms
+2022-10-13 21:16:53.581 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:16:53.585 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:16:53.619 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 206.1899ms
+2022-10-13 21:20:50.408 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:20:50.444 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:20:50.450 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:20:50.452 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:20:50.453 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:20:50.511 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:20:50.679 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 170.4350ms
+2022-10-13 21:20:50.688 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:20:50.688 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:20:50.692 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.0597ms
+2022-10-13 21:20:50.710 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.1340ms
+2022-10-13 21:20:50.817 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:20:50.898 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 80.7531ms
+2022-10-13 21:20:51.479 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:20:51.483 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:20:51.500 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:20:51.655 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 150.4018ms
+2022-10-13 21:20:51.657 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:20:51.660 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:20:51.692 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 213.5923ms
+2022-10-13 21:21:31.350 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:21:31.378 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:21:31.382 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:21:31.384 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:21:31.385 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:21:31.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:21:31.595 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 158.2748ms
+2022-10-13 21:21:31.598 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:21:31.598 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:21:31.608 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 9.6486ms
+2022-10-13 21:21:31.624 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.3109ms
+2022-10-13 21:21:31.740 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:21:31.816 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 75.7829ms
+2022-10-13 21:21:32.729 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:21:32.734 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:21:32.754 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:21:32.908 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 149.8105ms
+2022-10-13 21:21:32.912 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:21:32.914 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:21:32.942 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 213.2019ms
+2022-10-13 21:24:29.534 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:24:29.559 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:24:29.562 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:24:29.563 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:24:29.564 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:24:30.114 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:24:30.244 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 131.2979ms
+2022-10-13 21:24:30.247 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:24:30.247 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:24:30.252 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.8808ms
+2022-10-13 21:24:30.263 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.5406ms
+2022-10-13 21:24:30.368 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:24:30.436 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 67.8716ms
+2022-10-13 21:24:35.949 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:24:35.955 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:24:35.971 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:24:36.122 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 146.314ms
+2022-10-13 21:24:36.125 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:24:36.128 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:24:36.163 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 213.9787ms
+2022-10-13 21:26:36.300 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:26:36.332 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:26:36.337 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:26:36.338 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:26:36.339 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:26:36.378 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:26:36.510 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 133.9550ms
+2022-10-13 21:26:36.513 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:26:36.513 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:26:36.517 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.6307ms
+2022-10-13 21:26:36.532 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.1533ms
+2022-10-13 21:26:36.633 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:26:36.697 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 64.2437ms
+2022-10-13 21:26:37.801 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:26:37.807 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:26:37.826 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:26:37.978 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 147.4505ms
+2022-10-13 21:26:37.981 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:26:37.984 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:26:38.010 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 208.5578ms
+2022-10-13 21:30:13.902 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:30:13.928 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:30:13.932 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:30:13.932 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:30:13.933 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:30:13.992 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:30:14.116 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 125.6800ms
+2022-10-13 21:30:14.119 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:30:14.119 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:30:14.122 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.7423ms
+2022-10-13 21:30:14.132 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.7261ms
+2022-10-13 21:30:14.247 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:30:14.312 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 64.9762ms
+2022-10-13 21:30:20.238 +05:30 [INF] Request starting HTTP/1.1 PUT https://localhost:7078/api/books/1 application/json 96
+2022-10-13 21:30:20.242 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.UpdateBook (Book API)'
+2022-10-13 21:30:20.261 +05:30 [INF] Route matched with {action = "UpdateBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateBook(Int32, Book_API.Models.BookForUpdateDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:30:20.721 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:30:22.748 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 21:30:22.794 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 21:30:22.826 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2022-10-13 21:30:22.832 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.UpdateBook (Book API) in 2565.6483ms
+2022-10-13 21:30:22.833 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.UpdateBook (Book API)'
+2022-10-13 21:30:22.836 +05:30 [INF] Request finished HTTP/1.1 PUT https://localhost:7078/api/books/1 application/json 96 - 500 - text/plain;+charset=utf-8 2598.3698ms
+2022-10-13 21:31:01.568 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:31:01.592 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:31:01.597 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:31:01.598 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:31:01.599 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:31:01.691 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:31:01.823 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 133.7409ms
+2022-10-13 21:31:01.830 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:31:01.830 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:31:01.834 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.0308ms
+2022-10-13 21:31:01.849 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.1813ms
+2022-10-13 21:31:01.949 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:31:02.012 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 62.2969ms
+2022-10-13 21:31:04.193 +05:30 [INF] Request starting HTTP/1.1 PUT https://localhost:7078/api/books/1 application/json 96
+2022-10-13 21:31:04.197 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.UpdateBook (Book API)'
+2022-10-13 21:31:04.212 +05:30 [INF] Route matched with {action = "UpdateBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateBook(Int32, Book_API.Models.BookForUpdateDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:31:04.679 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:31:05.034 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 21:31:05.079 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 21:31:05.110 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2022-10-13 21:31:05.115 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.UpdateBook (Book API) in 898.8166ms
+2022-10-13 21:31:05.117 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.UpdateBook (Book API)'
+2022-10-13 21:31:05.120 +05:30 [INF] Request finished HTTP/1.1 PUT https://localhost:7078/api/books/1 application/json 96 - 500 - text/plain;+charset=utf-8 927.1844ms
+2022-10-13 21:33:05.337 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:33:05.361 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:33:05.363 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:33:05.364 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:33:05.365 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:33:05.434 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:33:05.567 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 135.1348ms
+2022-10-13 21:33:05.573 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:33:05.573 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:33:05.576 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.5522ms
+2022-10-13 21:33:05.585 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 11.8764ms
+2022-10-13 21:33:05.692 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:33:05.751 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 59.2456ms
+2022-10-13 21:33:11.109 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:33:11.114 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:33:11.131 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:33:11.287 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 150.9391ms
+2022-10-13 21:33:11.291 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:33:11.294 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:33:11.325 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 216.6622ms
+2022-10-13 21:33:19.367 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:33:19.405 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:33:19.410 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:33:19.411 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:33:19.412 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:33:20.320 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:33:20.559 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:33:20.562 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 243.9582ms
+2022-10-13 21:33:20.565 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.9412ms
+2022-10-13 21:33:20.584 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:33:20.618 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.2486ms
+2022-10-13 21:33:20.684 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:33:20.783 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 99.3989ms
+2022-10-13 21:33:39.543 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:33:39.577 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:33:39.580 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:33:39.580 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:33:39.581 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:33:40.166 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:33:40.410 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:33:40.411 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 247.9521ms
+2022-10-13 21:33:40.415 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.4426ms
+2022-10-13 21:33:40.432 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:33:40.463 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.9856ms
+2022-10-13 21:33:40.544 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:33:40.647 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 102.5013ms
+2022-10-13 21:33:45.072 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:33:45.080 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:33:45.101 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:34:15.344 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 30237.0935ms
+2022-10-13 21:34:15.350 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:34:15.353 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 50
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:34:15.399 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 30327.5944ms
+2022-10-13 21:37:50.447 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:37:50.484 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:37:50.487 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:37:50.488 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:37:50.489 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:37:51.423 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/2 - -
+2022-10-13 21:37:51.423 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:37:51.486 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 21:37:51.507 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:37:51.681 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:37:51.684 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 263.8525ms
+2022-10-13 21:37:51.686 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.8465ms
+2022-10-13 21:37:51.704 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:37:51.724 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.6245ms
+2022-10-13 21:37:51.812 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:37:51.936 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 124.2408ms
+2022-10-13 21:37:52.361 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:37:53.054 +05:30 [INF] Executed DbCommand (62ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 21:37:53.129 +05:30 [INF] Executing OkObjectResult, writing value of type 'Book_API.Entities.Book'.
+2022-10-13 21:37:53.138 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 1623.9637ms
+2022-10-13 21:37:53.140 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 21:37:53.147 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/2 - - - 200 - application/json;+charset=utf-8 1727.2101ms
+2022-10-13 21:38:40.084 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:38:40.117 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:38:40.119 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:38:40.120 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:38:40.120 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:38:40.616 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:38:40.838 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:38:40.844 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 230.1498ms
+2022-10-13 21:38:40.845 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 7.3344ms
+2022-10-13 21:38:40.863 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:38:40.899 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.3097ms
+2022-10-13 21:38:40.977 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:38:41.072 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 95.6241ms
+2022-10-13 21:38:48.899 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:38:48.931 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:38:48.936 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:38:48.937 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:38:48.938 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:38:49.447 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:38:49.701 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:38:49.706 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 260.7033ms
+2022-10-13 21:38:49.711 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 9.4202ms
+2022-10-13 21:38:49.732 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:38:49.775 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.8634ms
+2022-10-13 21:38:49.844 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:38:49.950 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 106.1198ms
+2022-10-13 21:38:55.091 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/api/books - -
+2022-10-13 21:38:55.099 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:38:55.114 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:38:55.757 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:38:56.279 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 21:39:05.715 +05:30 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2022-10-13 21:39:05.727 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 10607.26ms
+2022-10-13 21:39:05.729 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:39:05.737 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/api/books - - - 406 0 - 10646.4211ms
+2022-10-13 21:39:14.157 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/2 - -
+2022-10-13 21:39:14.159 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 21:39:14.168 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:39:14.177 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:39:14.344 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 21:39:14.352 +05:30 [INF] Executing OkObjectResult, writing value of type 'Book_API.Entities.Book'.
+2022-10-13 21:39:14.356 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 186.0453ms
+2022-10-13 21:39:14.357 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 21:39:14.358 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/2 - - - 200 - application/json;+charset=utf-8 200.4832ms
+2022-10-13 21:39:18.422 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 21:39:18.425 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:39:18.426 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:39:18.464 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:39:18.467 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 21:39:23.158 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 21:39:23.162 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 4733.2188ms
+2022-10-13 21:39:23.163 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:39:23.164 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 4742.0442ms
+2022-10-13 21:39:33.856 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/api/books - -
+2022-10-13 21:39:33.859 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:39:33.860 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:39:33.863 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:39:33.867 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 21:39:41.957 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 21:39:41.960 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 8097.5933ms
+2022-10-13 21:39:41.961 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:39:41.963 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 8107.2118ms
+2022-10-13 21:40:00.099 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/api/books - -
+2022-10-13 21:40:00.101 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:40:00.103 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:40:00.106 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:40:00.108 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 21:40:09.193 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 21:40:09.196 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 9091.657ms
+2022-10-13 21:40:09.198 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:40:09.199 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 9099.8837ms
+2022-10-13 21:40:21.475 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:40:21.477 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:40:21.480 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:40:33.262 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 11781.4326ms
+2022-10-13 21:40:33.265 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:40:33.269 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method64(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 51
+   at lambda_method59(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:40:33.319 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 11843.9160ms
+2022-10-13 21:41:38.768 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:41:38.806 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:41:38.809 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:41:38.810 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:41:38.811 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:41:39.735 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:41:40.013 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:41:40.018 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 284.2998ms
+2022-10-13 21:41:40.023 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 10.4244ms
+2022-10-13 21:41:40.039 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:41:40.072 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.7768ms
+2022-10-13 21:41:40.133 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:41:40.138 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:41:40.147 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:41:40.163 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:41:40.286 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 139.1507ms
+2022-10-13 21:41:51.422 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 11254.6802ms
+2022-10-13 21:41:51.428 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:41:51.431 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BookForCreationDto -> Book
+Book_API.Models.BookForCreationDto -> Book_API.Entities.Book
+   at lambda_method12(Closure , Object , Book , ResolutionContext )
+   at Book_API.Controllers.BookApiController.AddBook(BookForCreationDto book) in C:\Files\Book API Combined\Book API\Book API\Controllers\BookApiController.cs:line 51
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-13 21:41:51.479 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 500 - text/plain;+charset=utf-8 11346.3161ms
+2022-10-13 21:42:33.318 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:42:33.352 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:42:33.357 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:42:33.358 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:42:33.358 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:42:33.855 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:42:34.156 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:42:34.160 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 308.0181ms
+2022-10-13 21:42:34.161 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.1311ms
+2022-10-13 21:42:34.174 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:42:34.195 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.0981ms
+2022-10-13 21:42:34.272 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:42:34.384 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 111.9358ms
+2022-10-13 21:42:36.033 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:42:36.038 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:42:36.058 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:42:44.405 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-10-13 21:42:44.417 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 8351.3738ms
+2022-10-13 21:42:44.423 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:42:44.427 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 400 - application/problem+json;+charset=utf-8 8394.1227ms
+2022-10-13 21:45:15.224 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:45:15.261 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:45:15.264 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:45:15.265 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:45:15.266 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:45:16.226 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:45:16.460 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:45:16.463 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 239.5872ms
+2022-10-13 21:45:16.466 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.4502ms
+2022-10-13 21:45:16.481 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:45:16.499 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.5513ms
+2022-10-13 21:45:16.577 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:45:16.681 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 104.7662ms
+2022-10-13 21:45:34.619 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:45:34.627 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:45:34.655 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:47:37.203 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:47:37.227 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:47:37.230 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:47:37.231 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:47:37.231 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:47:37.435 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:47:37.577 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 144.3165ms
+2022-10-13 21:47:37.583 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:47:37.586 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 2.1341ms
+2022-10-13 21:47:37.595 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:47:37.611 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.5524ms
+2022-10-13 21:47:37.683 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:47:37.752 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 69.8158ms
+2022-10-13 21:47:39.590 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:47:39.594 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:47:39.612 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:47:40.052 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:47:40.144 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2022-10-13 21:47:40.150 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 533.3456ms
+2022-10-13 21:47:40.153 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:47:40.158 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 200 - application/json;+charset=utf-8 567.1584ms
+2022-10-13 21:47:40.159 +05:30 [ERR] An error occurred using the connection to database 'BookDB' on server '(localdb)\MSSQLLocalDB'.
+2022-10-13 21:47:43.470 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 21:47:43.473 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:47:43.476 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:47:43.509 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:47:43.643 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 21:47:43.668 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 21:47:43.671 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 191.9121ms
+2022-10-13 21:47:43.672 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:47:43.673 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 202.7948ms
+2022-10-13 21:50:10.875 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 21:50:10.909 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 21:50:10.914 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 21:50:10.915 +05:30 [INF] Hosting environment: Development
+2022-10-13 21:50:10.916 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 21:50:10.946 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 21:50:11.088 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 145.3580ms
+2022-10-13 21:50:11.095 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 21:50:11.095 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 21:50:11.099 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.0115ms
+2022-10-13 21:50:11.111 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.9707ms
+2022-10-13 21:50:11.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 21:50:11.251 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 65.9997ms
+2022-10-13 21:50:15.521 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 21:50:15.526 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:50:15.543 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:50:15.998 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:50:16.286 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (Size = 30), @p1='?' (Size = 50), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Books] ([Author], [Title], [YearOfPublish])
+VALUES (@p0, @p1, @p2);
+SELECT [BookId]
+FROM [Books]
+WHERE @@ROWCOUNT = 1 AND [BookId] = scope_identity();
+2022-10-13 21:50:16.330 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2022-10-13 21:50:16.335 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 787.446ms
+2022-10-13 21:50:16.336 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 21:50:16.339 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 200 - application/json;+charset=utf-8 817.6833ms
+2022-10-13 21:50:18.437 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 21:50:18.438 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:50:18.442 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:50:18.487 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:50:18.652 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 21:50:18.670 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 21:50:18.674 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 229.6252ms
+2022-10-13 21:50:18.675 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:50:18.676 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 239.0162ms
+2022-10-13 21:50:33.621 +05:30 [INF] Request starting HTTP/1.1 PUT https://localhost:7078/api/books/1 application/json 96
+2022-10-13 21:50:33.624 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.UpdateBook (Book API)'
+2022-10-13 21:50:33.628 +05:30 [INF] Route matched with {action = "UpdateBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateBook(Int32, Book_API.Models.BookForUpdateDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:50:33.645 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:50:33.721 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 21:50:33.732 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 21:50:33.740 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__bookToUpdate_BookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookToUpdate_BookId_0
+2022-10-13 21:50:33.748 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 30), @p1='?' (Size = 50), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Books] SET [Author] = @p0, [Title] = @p1, [YearOfPublish] = @p2
+WHERE [BookId] = @p3;
+SELECT @@ROWCOUNT;
+2022-10-13 21:50:33.758 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 21:50:33.759 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.UpdateBook (Book API) in 129.6728ms
+2022-10-13 21:50:33.760 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.UpdateBook (Book API)'
+2022-10-13 21:50:33.761 +05:30 [INF] Request finished HTTP/1.1 PUT https://localhost:7078/api/books/1 application/json 96 - 204 - - 140.4395ms
+2022-10-13 21:50:38.199 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 21:50:38.201 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:50:38.202 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:50:38.204 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:50:38.207 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 21:50:38.211 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 21:50:38.212 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 8.4813ms
+2022-10-13 21:50:38.213 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:50:38.214 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 15.3096ms
+2022-10-13 21:57:11.325 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 21:57:11.327 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:57:11.329 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 21:57:11.332 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 21:57:11.382 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 21:57:11.385 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 21:57:11.386 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 55.0872ms
+2022-10-13 21:57:11.387 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 21:57:11.388 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 63.1042ms
+2022-10-13 22:02:13.814 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:02:13.843 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:02:13.848 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:02:13.849 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:02:13.850 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:02:13.902 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:02:14.027 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 126.6029ms
+2022-10-13 22:02:14.029 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:02:14.029 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:02:14.034 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.3971ms
+2022-10-13 22:02:14.044 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.6840ms
+2022-10-13 22:02:14.256 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:02:14.317 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 61.1621ms
+2022-10-13 22:07:59.372 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:07:59.399 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:07:59.401 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:07:59.402 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:07:59.403 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:07:59.429 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:07:59.551 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 123.3942ms
+2022-10-13 22:07:59.555 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:07:59.555 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:07:59.559 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.9286ms
+2022-10-13 22:07:59.568 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.1116ms
+2022-10-13 22:07:59.724 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:07:59.793 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 69.6838ms
+2022-10-13 22:08:07.525 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/3 - -
+2022-10-13 22:08:07.530 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:08:07.547 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:08:07.996 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:08:09.468 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 22:08:09.511 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:08:09.515 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:08:09.519 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 1966.8388ms
+2022-10-13 22:08:09.520 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:08:09.525 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/3 - - - 204 - - 1999.6443ms
+2022-10-13 22:08:09.546 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Book_API.DBContexts.BookContext'.
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2022-10-13 22:08:26.958 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 22:08:26.963 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:08:26.968 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:08:26.978 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:08:26.986 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 22:08:27.007 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 22:08:27.011 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 39.8646ms
+2022-10-13 22:08:27.013 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:08:27.015 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 57.1068ms
+2022-10-13 22:08:58.924 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:08:58.967 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:08:58.971 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:08:58.972 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:08:58.973 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:09:00.367 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:09:00.596 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:09:00.599 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 235.2110ms
+2022-10-13 22:09:00.602 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.8341ms
+2022-10-13 22:09:00.620 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:09:00.641 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.1814ms
+2022-10-13 22:09:00.728 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:09:00.854 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 125.5537ms
+2022-10-13 22:09:02.619 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/3 - -
+2022-10-13 22:09:02.628 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:09:02.654 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:09:10.143 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:09:11.134 +05:30 [INF] Executed DbCommand (85ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 22:09:11.251 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:09:11.263 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:09:11.270 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 8608.5421ms
+2022-10-13 22:09:11.273 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:09:11.285 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/3 - - - 204 - - 8665.2765ms
+2022-10-13 22:09:11.325 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Book_API.DBContexts.BookContext'.
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2022-10-13 22:09:31.644 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:09:31.700 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:09:31.706 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:09:31.707 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:09:31.708 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:09:32.173 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:09:32.408 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:09:32.408 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 238.6391ms
+2022-10-13 22:09:32.413 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.0203ms
+2022-10-13 22:09:32.424 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:09:32.449 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 25.3077ms
+2022-10-13 22:09:32.509 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:09:32.603 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 94.7337ms
+2022-10-13 22:09:33.308 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/3 - -
+2022-10-13 22:09:33.315 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:09:33.333 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:09:38.194 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:09:39.163 +05:30 [INF] Executed DbCommand (90ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 22:09:50.648 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:09:50.661 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:09:50.668 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 17328.1738ms
+2022-10-13 22:09:50.670 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:09:50.681 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/3 - - - 204 - - 17372.6880ms
+2022-10-13 22:09:50.727 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Book_API.DBContexts.BookContext'.
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2022-10-13 22:10:05.678 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:10:05.711 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:10:05.714 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:10:05.715 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:10:05.715 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:10:06.587 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:10:06.816 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 231.6582ms
+2022-10-13 22:10:06.877 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:10:06.883 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 5.3181ms
+2022-10-13 22:10:06.890 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:10:06.920 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.2527ms
+2022-10-13 22:10:06.982 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:10:07.079 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 96.2455ms
+2022-10-13 22:10:07.596 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/3 - -
+2022-10-13 22:10:07.603 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:10:07.624 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:10:08.280 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:10:08.967 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 22:10:17.373 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:10:17.385 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:10:17.392 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 9762.25ms
+2022-10-13 22:10:17.395 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:10:17.406 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/3 - - - 204 - - 9809.5557ms
+2022-10-13 22:10:17.448 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Book_API.DBContexts.BookContext'.
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2022-10-13 22:12:03.901 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:12:03.940 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:12:03.944 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:12:03.945 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:12:03.946 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:12:04.126 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:12:04.337 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 215.9458ms
+2022-10-13 22:12:04.344 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:12:04.347 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.0432ms
+2022-10-13 22:12:04.364 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:12:04.385 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.5045ms
+2022-10-13 22:12:04.508 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:12:04.579 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.5933ms
+2022-10-13 22:12:08.526 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/1 - -
+2022-10-13 22:12:08.531 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:08.548 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:12:08.983 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:12:09.372 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:12:09.410 +05:30 [INF] Executing OkObjectResult, writing value of type 'Book_API.Entities.Book'.
+2022-10-13 22:12:09.416 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 863.3213ms
+2022-10-13 22:12:09.418 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:09.422 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/1 - - - 200 - application/json;+charset=utf-8 895.3158ms
+2022-10-13 22:12:13.268 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/3 - -
+2022-10-13 22:12:13.270 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:13.272 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:12:13.277 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:12:13.284 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:12:13.286 +05:30 [INF] Executing OkObjectResult, writing value of type 'Book_API.Entities.Book'.
+2022-10-13 22:12:13.288 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 13.5054ms
+2022-10-13 22:12:13.289 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:13.291 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/3 - - - 200 - application/json;+charset=utf-8 22.7222ms
+2022-10-13 22:12:16.028 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/4 - -
+2022-10-13 22:12:16.031 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:16.032 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:12:16.077 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:12:16.082 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:12:16.084 +05:30 [INF] Executing OkObjectResult, writing value of type 'Book_API.Entities.Book'.
+2022-10-13 22:12:16.085 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 51.7006ms
+2022-10-13 22:12:16.086 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:16.089 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/4 - - - 200 - application/json;+charset=utf-8 60.7403ms
+2022-10-13 22:12:20.279 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/1 - -
+2022-10-13 22:12:20.294 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:20.299 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:12:20.306 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:12:20.309 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:12:20.314 +05:30 [INF] Executing OkObjectResult, writing value of type 'Book_API.Entities.Book'.
+2022-10-13 22:12:20.316 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 11.6199ms
+2022-10-13 22:12:20.318 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:20.319 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/1 - - - 200 - application/json;+charset=utf-8 39.9632ms
+2022-10-13 22:12:22.277 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/12 - -
+2022-10-13 22:12:22.279 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:22.280 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:12:22.283 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:12:22.286 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:12:22.288 +05:30 [INF] The book with bookId 12 wasn't found on the server
+2022-10-13 22:12:22.290 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-10-13 22:12:22.291 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 9.0864ms
+2022-10-13 22:12:22.292 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:22.293 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/12 - - - 404 - application/problem+json;+charset=utf-8 16.6027ms
+2022-10-13 22:12:26.085 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books/1 - -
+2022-10-13 22:12:26.086 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:26.088 +05:30 [INF] Route matched with {action = "GetBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] GetBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:12:26.091 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:12:26.094 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:12:26.096 +05:30 [INF] Executing OkObjectResult, writing value of type 'Book_API.Entities.Book'.
+2022-10-13 22:12:26.098 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBook (Book API) in 7.4385ms
+2022-10-13 22:12:26.099 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBook (Book API)'
+2022-10-13 22:12:26.100 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books/1 - - - 200 - application/json;+charset=utf-8 14.8704ms
+2022-10-13 22:13:47.371 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:13:47.398 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:13:47.401 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:13:47.402 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:13:47.403 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:13:47.507 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:13:47.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 133.7549ms
+2022-10-13 22:13:47.641 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:13:47.641 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:13:47.645 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.5527ms
+2022-10-13 22:13:47.658 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.7786ms
+2022-10-13 22:13:47.734 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:13:47.806 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.9178ms
+2022-10-13 22:13:51.152 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/3 - -
+2022-10-13 22:13:51.156 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:13:51.173 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:13:51.618 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:13:52.003 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:13:52.047 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:13:52.050 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:13:52.057 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 877.2988ms
+2022-10-13 22:13:52.058 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:13:52.062 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/3 - - - 204 - - 910.3733ms
+2022-10-13 22:14:10.450 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 22:14:10.451 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:14:10.454 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:14:10.459 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:14:10.466 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 22:14:10.482 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 22:14:10.486 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 31.2858ms
+2022-10-13 22:14:10.487 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:14:10.488 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 37.8372ms
+2022-10-13 22:14:17.403 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/3 - -
+2022-10-13 22:14:17.404 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:14:17.406 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:14:17.441 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:14:17.446 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:14:17.450 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:14:17.450 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:14:17.451 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 43.7378ms
+2022-10-13 22:14:17.454 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:14:17.455 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/3 - - - 204 - - 52.2955ms
+2022-10-13 22:15:52.377 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:15:52.414 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:15:52.418 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:15:52.419 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:15:52.421 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:15:52.448 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:15:52.605 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 158.9759ms
+2022-10-13 22:15:52.607 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:15:52.607 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:15:52.611 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.0070ms
+2022-10-13 22:15:52.620 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.7215ms
+2022-10-13 22:15:52.706 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:15:52.803 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 96.5791ms
+2022-10-13 22:15:56.741 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/3 - -
+2022-10-13 22:15:56.746 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:15:56.762 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:15:57.217 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:15:57.583 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 22:15:57.624 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:15:57.628 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:15:57.634 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 865.7404ms
+2022-10-13 22:15:57.635 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:15:57.638 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/3 - - - 204 - - 897.3212ms
+2022-10-13 22:15:57.660 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Book_API.DBContexts.BookContext'.
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2022-10-13 22:16:00.563 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 22:16:00.565 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:16:00.570 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:16:00.580 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:16:00.589 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 22:16:00.613 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 22:16:00.619 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 46.8776ms
+2022-10-13 22:16:00.620 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:16:00.621 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 58.5665ms
+2022-10-13 22:16:18.086 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/3 - -
+2022-10-13 22:16:18.089 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:16:18.090 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:16:18.135 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:16:18.142 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 22:16:18.146 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:16:18.146 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:16:18.147 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 55.0631ms
+2022-10-13 22:16:18.150 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:16:18.151 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/3 - - - 204 - - 64.7642ms
+2022-10-13 22:16:27.293 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 22:16:27.295 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:16:27.296 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:16:27.298 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:16:27.300 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 22:16:27.301 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 22:16:27.303 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 4.8633ms
+2022-10-13 22:16:27.305 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:16:27.306 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 12.6171ms
+2022-10-13 22:16:35.250 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/4 - -
+2022-10-13 22:16:35.252 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:16:35.254 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:16:35.258 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:16:35.262 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 22:16:35.266 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:16:35.267 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:16:35.267 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 9.5897ms
+2022-10-13 22:16:35.271 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:16:35.274 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/4 - - - 204 - - 24.5007ms
+2022-10-13 22:17:13.633 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 22:17:13.635 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:17:13.636 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:17:13.639 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:17:13.642 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 22:17:13.644 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 22:17:13.647 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 8.2866ms
+2022-10-13 22:17:13.648 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:17:13.649 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 16.0829ms
+2022-10-13 22:18:11.485 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/4 - -
+2022-10-13 22:18:11.487 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:18:11.489 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:18:11.493 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:18:11.495 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 22:18:11.499 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:18:11.500 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:18:11.500 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 8.1045ms
+2022-10-13 22:18:11.504 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:18:11.505 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/4 - - - 204 - - 20.6241ms
+2022-10-13 22:18:14.747 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 22:18:14.749 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:18:14.750 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:18:14.752 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:18:14.755 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 22:18:14.758 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 22:18:14.760 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 8.4802ms
+2022-10-13 22:18:14.761 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:18:14.763 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 15.2700ms
+2022-10-13 22:18:21.836 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/4 - -
+2022-10-13 22:18:21.838 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:18:21.840 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:18:21.843 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:18:21.846 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[BookId] = @__bookId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-13 22:18:21.850 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:18:21.851 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:18:21.851 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 8.7412ms
+2022-10-13 22:18:21.858 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:18:21.859 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/4 - - - 204 - - 22.8134ms
+2022-10-13 22:20:56.441 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:20:56.475 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:20:56.478 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:20:56.480 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:20:56.481 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:20:57.006 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:20:57.140 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 135.3943ms
+2022-10-13 22:20:57.146 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:20:57.146 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:20:57.150 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.0387ms
+2022-10-13 22:20:57.165 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.2849ms
+2022-10-13 22:20:57.235 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:20:57.307 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.1250ms
+2022-10-13 22:21:02.054 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/4 - -
+2022-10-13 22:21:02.059 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:21:02.076 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:21:02.522 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:21:02.889 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:21:03.002 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Books]
+WHERE [BookId] = @p0;
+SELECT @@ROWCOUNT;
+2022-10-13 22:21:03.024 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:21:03.028 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 947.7041ms
+2022-10-13 22:21:03.030 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:21:03.034 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/4 - - - 204 - - 979.4871ms
+2022-10-13 22:21:42.646 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/4 - -
+2022-10-13 22:21:42.648 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:21:42.650 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:21:42.656 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:21:42.661 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:21:42.663 +05:30 [INF] The Book with Id 4 is not found
+2022-10-13 22:21:42.667 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2022-10-13 22:21:42.668 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 15.3506ms
+2022-10-13 22:21:42.670 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:21:42.671 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/4 - - - 404 - text/plain;+charset=utf-8 24.7647ms
+2022-10-13 22:21:54.192 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 22:21:54.194 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:21:54.200 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:21:54.257 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:21:54.264 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 22:21:54.280 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 22:21:54.283 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 78.7766ms
+2022-10-13 22:21:54.284 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:21:54.286 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 93.8314ms
+2022-10-13 22:21:59.597 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7078/api/books application/json 94
+2022-10-13 22:21:59.599 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 22:21:59.601 +05:30 [INF] Route matched with {action = "AddBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Book_API.Models.BookForCreationDto]] AddBook(Book_API.Models.BookForCreationDto) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:21:59.611 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:21:59.635 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 30), @p1='?' (Size = 50), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Books] ([Author], [Title], [YearOfPublish])
+VALUES (@p0, @p1, @p2);
+SELECT [BookId]
+FROM [Books]
+WHERE @@ROWCOUNT = 1 AND [BookId] = scope_identity();
+2022-10-13 22:21:59.655 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2022-10-13 22:21:59.656 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.AddBook (Book API) in 53.9264ms
+2022-10-13 22:21:59.657 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.AddBook (Book API)'
+2022-10-13 22:21:59.658 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7078/api/books application/json 94 - 200 - application/json;+charset=utf-8 61.1747ms
+2022-10-13 22:22:02.054 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7078/api/books - -
+2022-10-13 22:22:02.056 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:22:02.057 +05:30 [INF] Route matched with {action = "GetBooks", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Book_API.Models.BookDto]]] GetBooks() on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:22:02.061 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:22:02.064 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+2022-10-13 22:22:02.067 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Book_API.Models.BookDto, Book API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-13 22:22:02.069 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.GetBooks (Book API) in 9.198ms
+2022-10-13 22:22:02.071 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.GetBooks (Book API)'
+2022-10-13 22:22:02.072 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7078/api/books - - - 200 - application/json;+charset=utf-8 18.0693ms
+2022-10-13 22:22:11.526 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/5 - -
+2022-10-13 22:22:11.528 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:22:11.530 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:22:11.534 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:22:11.536 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:22:11.541 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Books]
+WHERE [BookId] = @p0;
+SELECT @@ROWCOUNT;
+2022-10-13 22:22:11.545 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-10-13 22:22:11.546 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 13.2681ms
+2022-10-13 22:22:11.547 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:22:11.548 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/5 - - - 204 - - 22.4434ms
+2022-10-13 22:22:33.063 +05:30 [INF] Request starting HTTP/1.1 DELETE https://localhost:7078/api/books/5 - -
+2022-10-13 22:22:33.065 +05:30 [INF] Executing endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:22:33.066 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "BookApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteBook(Int32) on controller Book_API.Controllers.BookApiController (Book API).
+2022-10-13 22:22:33.069 +05:30 [INF] Entity Framework Core 6.0.9 initialized 'BookContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: None
+2022-10-13 22:22:33.071 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Author], [b].[Title], [b].[YearOfPublish]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__bookId_0
+2022-10-13 22:22:33.074 +05:30 [INF] The Book with Id 5 is not found
+2022-10-13 22:22:33.074 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2022-10-13 22:22:33.075 +05:30 [INF] Executed action Book_API.Controllers.BookApiController.DeleteBook (Book API) in 7.2386ms
+2022-10-13 22:22:33.077 +05:30 [INF] Executed endpoint 'Book_API.Controllers.BookApiController.DeleteBook (Book API)'
+2022-10-13 22:22:33.078 +05:30 [INF] Request finished HTTP/1.1 DELETE https://localhost:7078/api/books/5 - - - 404 - text/plain;+charset=utf-8 15.5531ms
+2022-10-13 22:22:57.040 +05:30 [INF] Now listening on: https://localhost:7078
+2022-10-13 22:22:57.071 +05:30 [INF] Now listening on: http://localhost:5078
+2022-10-13 22:22:57.074 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-13 22:22:57.074 +05:30 [INF] Hosting environment: Development
+2022-10-13 22:22:57.076 +05:30 [INF] Content root path: C:\Files\Book API Combined\Book API\Book API\
+2022-10-13 22:22:57.605 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/index.html - -
+2022-10-13 22:22:57.807 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/index.html - - - 200 - text/html;charset=utf-8 204.5274ms
+2022-10-13 22:22:57.816 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - -
+2022-10-13 22:22:57.816 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/_vs/browserLink - -
+2022-10-13 22:22:57.820 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 4.3381ms
+2022-10-13 22:22:57.837 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.8086ms
+2022-10-13 22:22:57.923 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - -
+2022-10-13 22:22:58.013 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7078/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 89.9835ms
