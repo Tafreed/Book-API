@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Book API</name>
+    </assembly>
+    <members>
+        <member name="M:Book_API.Controllers.AuthController.Authenticate(Book_API.Controllers.AuthenticationRequestBody)">
+            <summary>
+            Get Bearer Token
+            </summary>
+            <param name="authenticationRequestBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Book_API.Controllers.BookApiController.GetBooks(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get All Books
+            </summary>
+            <param name="name">Name of the Book</param>
+            <param name="searchQuery">Searching Criteria</param>
+            <param name="pageNumber">Page Number</param>
+            <param name="pageSize">Page Size (maximum 10)</param>
+            <response code = "200">Returns the requested city</response>>
+            <returns></returns>
+        </member>
+        <member name="M:Book_API.Controllers.BookApiController.GetBook(System.Int32)">
+            <summary>
+            Get a Book by the BookId
+            </summary>
+            <param name="id">The Id of the Book</param>
+            <returns></returns>
+        </member>
+        <member name="M:Book_API.Controllers.BookApiController.AddBook(Book_API.Models.BookForCreationDto)">
+            <summary>
+            Add a new Book
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Book_API.Controllers.BookApiController.UpdateBook(System.Int32,Book_API.Models.BookForUpdateDto)">
+            <summary>
+            Update a existing Book
+            </summary>
+            <param name="bookId"></param>
+            <param name="newBook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Book_API.Controllers.BookApiController.DeleteBook(System.Int32)">
+            <summary>
+            Delete a book by its BookId
+            </summary>
+            <param name="bookId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Book_API.Models.BookDto">
+            <summary>
+            A DTO for the Book Entity
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookDto.BookId">
+            <summary>
+            The Book Id Unique for each Book
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookDto.Title">
+            <summary>
+            Name of the Book
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookDto.Author">
+            <summary>
+            Author of the Book
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookDto.YearOfPublish">
+            <summary>
+            Year of Publish of the book
+            </summary>
+        </member>
+        <member name="T:Book_API.Models.BookForUpdateDto">
+            <summary>
+            A DTO for Updating Book Entity
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookForUpdateDto.Title">
+            <summary>
+            Name of the Book
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookForUpdateDto.Author">
+            <summary>
+            Title of the Book
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookForUpdateDto.YearOfPublish">
+            <summary>
+            Year of publish of the Book
+            </summary>
+        </member>
+        <member name="T:Book_API.Models.BookForCreationDto">
+            <summary>
+            A DTO for adding a new Book
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookForCreationDto.Title">
+            <summary>
+            Name of the Book
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookForCreationDto.Author">
+            <summary>
+            Author of the Book
+            </summary>
+        </member>
+        <member name="P:Book_API.Models.BookForCreationDto.YearOfPublish">
+            <summary>
+            Year of publish of the Book
+            </summary>
+        </member>
+    </members>
+</doc>
