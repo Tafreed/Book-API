@@ -4,7 +4,7 @@ using Book_API.DBContexts;
 using Book_API.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -38,18 +38,9 @@ builder.Services.AddSwaggerGen(options =>
             Description = "Input a valid token to access this API"
         });
 
-        options.AddSecurityRequirement(new OpenApiSecurityRequirement
+        options.AddSecurityRequirement(document => new OpenApiSecurityRequirement
         {
-            {
-                new OpenApiSecurityScheme
-                {
-                    Reference = new OpenApiReference
-                    {
-                        Type = ReferenceType.SecurityScheme,
-                         Id = "BookAPIBearerAuth",
-                    }
-                }, new List<string>()
-            }
+            [new OpenApiSecuritySchemeReference("BookAPIBearerAuth", document)] = new List<string>()
         });
     });
 
@@ -64,7 +55,7 @@ builder.Services.AddTransient<IMailService, LocalMailService>();
 //builder.Services.AddTransient<IMailService, CloudMailService>();
 # endif
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(cfg => cfg.AddMaps(typeof(Program).Assembly));
 
 builder.Services.AddCors();
 
